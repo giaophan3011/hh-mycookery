@@ -1,4 +1,4 @@
-package com.valmet.vmmintegration;
+package com.gph.mycookery;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
