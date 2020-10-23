@@ -1,26 +1,28 @@
 package com.gph.mycookery.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Recipe {
+public class RecipeIngredient {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
-    private String title;
-    private String instruction;
-    @Enumerated(EnumType.STRING)
-    private CategoryEnum category;
-    @OneToMany(cascade=CascadeType.ALL,mappedBy="recipe", fetch = FetchType.EAGER)
-    private List<RecipeIngredient> recipeIngredients;
+    private String name;
+    private float amount;
+    private String unit;
+    private float caloriesPer100g;
+    @ManyToOne
+    @JoinColumn(name="recipeid")
+    @JsonIgnore
+    private Recipe recipe;
 }

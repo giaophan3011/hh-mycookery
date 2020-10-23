@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Collections;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -21,21 +22,37 @@ public class RecipeServiceTest {
 
     @BeforeEach
     public void init () {
+        CreateRecipeRequest.Ingredient ingredient = CreateRecipeRequest.Ingredient
+                .builder()
+                .name("Test ingredient 1")
+                .unit("grams")
+                .amount(100)
+                .caloriesPer100g(50)
+                .build();
         CreateRecipeRequest firstRecipe = CreateRecipeRequest
                 .builder()
                 .title("First recipe")
                 .instruction("Testing instruction")
                 .category(CategoryEnum.dessert)
+                .ingredients(Collections.singletonList(ingredient))
                 .build();
         recipeService.createRecipe(firstRecipe);
     }
 
     @Test
     public void createNewRecipe () {
+        CreateRecipeRequest.Ingredient ingredient = CreateRecipeRequest.Ingredient
+                .builder()
+                .name("Test ingredient 2")
+                .unit("grams")
+                .amount(100)
+                .caloriesPer100g(50)
+                .build();
         CreateRecipeRequest newRecipe = CreateRecipeRequest
                 .builder()
                 .title("Second recipe")
                 .instruction("Testing instruction")
+                .ingredients(Collections.singletonList(ingredient))
                 .category(CategoryEnum.dessert)
                 .build();
         Recipe createdRecipe = recipeService.createRecipe(newRecipe);
@@ -52,6 +69,8 @@ public class RecipeServiceTest {
         assertThat (recipe.getTitle().equals("First recipe"));
         assertThat (recipe.getInstruction().equals("Testing instruction"));
         assertThat (recipe.getCategory().equals(CategoryEnum.dessert));
+        assertThat (recipe.getRecipeIngredients().size() == 1);
+        assertThat (recipe.getRecipeIngredients().get(0).getId()).isNotNull();
     }
 
     @Test
