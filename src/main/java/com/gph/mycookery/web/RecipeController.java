@@ -27,4 +27,9 @@ public class RecipeController {
         return recipeService.getRecipe(id);
     }
 
+    @PostMapping("/v1/recipes/{id}")
+    public Recipe addNote (@RequestBody EditRecipeRequest request) {
+        return recipeService.editRecipe(request);
+    }
+
 }

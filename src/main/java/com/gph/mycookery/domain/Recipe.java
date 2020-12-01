@@ -18,9 +18,13 @@ public class Recipe {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
     private String title;
+    private String shortDescription;
     private String instruction;
     @Enumerated(EnumType.STRING)
     private CategoryEnum category;
     @OneToMany(cascade=CascadeType.ALL,mappedBy="recipe", fetch = FetchType.EAGER)
     private List<RecipeIngredient> recipeIngredients;
+    //Notes are only added, cannot be changed
+    @OneToMany(cascade=CascadeType.ALL,mappedBy="recipe")
+    private List<RecipeNote> recipeNotes;
 }

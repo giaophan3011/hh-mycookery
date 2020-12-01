@@ -19,6 +19,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class CreateRecipeRequest {
     private String title;
+    private String shortDescription;
     private String instruction;
     @Enumerated(EnumType.STRING)
     private CategoryEnum category;
@@ -32,18 +33,12 @@ public class CreateRecipeRequest {
     public Recipe convertToEntity () {
         Recipe recipe = Recipe.builder()
                 .title(getTitle())
+                .shortDescription(getShortDescription())
                 .instruction(getInstruction())
                 .category(getCategory())
-                .recipeIngredients(getIngredients().stream()
-                        .map(Ingredient::convertToEntity)
-                        .collect(Collectors.toList()))
                 .build();
         List<RecipeIngredient> recipeIngredients = getIngredients().stream()
-                .map(i -> {
-                    RecipeIngredient ri = i.convertToEntity();
-                    ri.setRecipe(recipe);
-                    return ri;
-                })
+                .map(i -> i.convertToEntity(recipe))
                 .collect(Collectors.toList());
         recipe.setRecipeIngredients(recipeIngredients);
         return recipe;
@@ -65,6 +60,11 @@ public class CreateRecipeRequest {
                     .caloriesPer100g(getCaloriesPer100g())
                     .unit(getUnit())
                     .build();
+        }
+        public RecipeIngredient convertToEntity (Recipe recipe) {
+            RecipeIngredient ingredient = convertToEntity();
+            ingredient.setRecipe(recipe);
+            return ingredient;
         }
     }
 }
