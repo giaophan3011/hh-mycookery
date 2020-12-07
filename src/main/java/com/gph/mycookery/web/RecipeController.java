@@ -17,12 +17,12 @@ public class RecipeController {
     public Recipe createRecipe (@RequestBody CreateRecipeRequest request) {
         return recipeService.createRecipe(request);
     }
-    @GetMapping("/v1/recipes")
+    @GetMapping("/public/v1/recipes")
     public List<Recipe> getRecipes () {
         return recipeService.getRecipes();
     }
     //TODO Error not found
-    @GetMapping("/v1/recipes/{id}")
+    @GetMapping("/public/v1/recipes/{id}")
     public Recipe getRecipe (@PathVariable("id")Long id) {
         return recipeService.getRecipe(id);
     }

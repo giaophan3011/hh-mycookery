@@ -34,7 +34,3 @@ build/
 
 ### Front end ###
 
-# dependencies
-/frontend/node_modules
-# production
-/frontend/build
