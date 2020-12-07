@@ -36,6 +36,7 @@ public class AuthConfig extends WebSecurityConfigurerAdapter {
                     .authenticated()
                 .and()
                 .httpBasic();
+        http.cors();
     }
 
     @Autowired
