@@ -1,7 +1,7 @@
 package com.gph.mycookery;
 
-import com.gph.mycookery.domain.CategoryEnum;
-import com.gph.mycookery.domain.Recipe;
+import com.gph.mycookery.domain.recipe.CategoryEnum;
+import com.gph.mycookery.domain.recipe.Recipe;
 import com.gph.mycookery.domain.RecipeService;
 import com.gph.mycookery.web.CreateRecipeRequest;
 import org.junit.jupiter.api.BeforeEach;

@@ -1,5 +1,9 @@
 package com.gph.mycookery.domain;
 
+import com.gph.mycookery.domain.ingredient.RecipeIngredientRepository;
+import com.gph.mycookery.domain.notes.RecipeNoteRepository;
+import com.gph.mycookery.domain.recipe.Recipe;
+import com.gph.mycookery.domain.recipe.RecipeRepository;
 import com.gph.mycookery.web.CreateRecipeRequest;
 import com.gph.mycookery.web.EditRecipeRequest;
 import org.springframework.beans.factory.annotation.Autowired;

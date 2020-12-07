@@ -1,8 +1,8 @@
 package com.gph.mycookery.web;
 
-import com.gph.mycookery.domain.CategoryEnum;
-import com.gph.mycookery.domain.Recipe;
-import com.gph.mycookery.domain.RecipeIngredient;
+import com.gph.mycookery.domain.recipe.CategoryEnum;
+import com.gph.mycookery.domain.recipe.Recipe;
+import com.gph.mycookery.domain.ingredient.RecipeIngredient;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

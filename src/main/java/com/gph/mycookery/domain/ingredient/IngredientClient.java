@@ -1,4 +1,4 @@
-package com.gph.mycookery.domain;
+package com.gph.mycookery.domain.ingredient;
 
 import com.gph.mycookery.util.BaseClient;
 import org.springframework.beans.factory.annotation.Autowired;

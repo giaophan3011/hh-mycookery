@@ -1,5 +1,6 @@
 package com.gph.mycookery.domain;
 
+import com.gph.mycookery.domain.recipe.Recipe;
 import com.gph.mycookery.web.CreateRecipeRequest;
 import com.gph.mycookery.web.EditRecipeRequest;
 

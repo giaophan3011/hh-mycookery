@@ -1,5 +1,6 @@
-package com.gph.mycookery.domain;
+package com.gph.mycookery.domain.notes;
 
+import com.gph.mycookery.domain.notes.RecipeNote;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

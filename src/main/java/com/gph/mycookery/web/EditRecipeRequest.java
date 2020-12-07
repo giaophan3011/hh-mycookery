@@ -1,15 +1,14 @@
 package com.gph.mycookery.web;
 
-import com.gph.mycookery.domain.Recipe;
-import com.gph.mycookery.domain.RecipeIngredient;
-import com.gph.mycookery.domain.RecipeNote;
+import com.gph.mycookery.domain.recipe.Recipe;
+import com.gph.mycookery.domain.ingredient.RecipeIngredient;
+import com.gph.mycookery.domain.notes.RecipeNote;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 

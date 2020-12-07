@@ -1,5 +1,7 @@
-package com.gph.mycookery.domain;
+package com.gph.mycookery.domain.recipe;
 
+import com.gph.mycookery.domain.ingredient.RecipeIngredient;
+import com.gph.mycookery.domain.notes.RecipeNote;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

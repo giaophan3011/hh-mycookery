@@ -1,6 +1,6 @@
 package com.gph.mycookery.web;
 
-import com.gph.mycookery.domain.Recipe;
+import com.gph.mycookery.domain.recipe.Recipe;
 import com.gph.mycookery.domain.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
