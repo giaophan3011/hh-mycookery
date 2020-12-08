@@ -3,7 +3,7 @@ import axios from "axios";
 class ApiService {
 
   static get APP_PATH() {
-    return "http://localhost:8082";
+    return "http://mycookery-env.eba-pyzwpsyr.eu-central-1.elasticbeanstalk.com";
   }
 
 
